@@ -24,6 +24,7 @@ public class Triangulo {
             tipo="Triangulo Isósceles";
             return tipo;
         }
+        areaDeTriangulo();
         return tipo;
     }
 
