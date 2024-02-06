@@ -1,52 +1,64 @@
 package test;
 
+import main.ExepcionNoEsTriangulo;
 import main.Triangulo;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class TrianguloTest {
     @Test
     public void testEquilatero() {
         Triangulo t = new Triangulo(3, 3, 3);
-        Assert.assertEquals("Equilatero", t.tipoDeTriangulo());
+        assertEquals("Equilatero", t.tipoDeTriangulo());
     }
 
     @Test
     public void testIsosceles() {
         Triangulo t = new Triangulo(5, 5, 3);
-        Assert.assertEquals("Isósceles", t.tipoDeTriangulo());
+        assertEquals("Isósceles", t.tipoDeTriangulo());
     }
 
     @Test
     public void testEscaleno() {
         Triangulo t = new Triangulo(3, 4, 5);
-        Assert.assertEquals("Escaleno", t.tipoDeTriangulo());
+        assertEquals("Escaleno", t.tipoDeTriangulo());
     }
 
     /*test de es triangulo*/
 
     @Test
-    public void testEsTriangulo() {
+    public void testEsTriangulo() throws ExepcionNoEsTriangulo {
         Assert.assertTrue(Triangulo.esTriangulo(3, 4, 5));
     }
 
     @Test
-    public void testNoEsTriangulo() {
-        Assert.assertFalse(Triangulo.esTriangulo(3, 4, 10));
-    }
 
-    /*test de area de triangulo*/
+    public void testNoEsTriangulo(){
+
+        double a=3,b=4, c=10 ;
+
+        String resultadoEsperado = "Los lados proporcionados no forman un triangulo";
+
+        ExepcionNoEsTriangulo resultadoObtenido
+
+                = assertThrows(ExepcionNoEsTriangulo.class, () -> Triangulo.esTriangulo(a,b,c));
+
+        assertEquals(resultadoEsperado, resultadoObtenido.getMessage());
+    }
 
     @Test
     public void testArea() {
         Triangulo t = new Triangulo(3, 4, 5);
-        Assert.assertEquals(6, t.areaDeTriangulo(), 0.1);
+        assertEquals(6, t.areaDeTriangulo(), 0.1);
     }
 
     @Test
     public void testArea2() {
         Triangulo t = new Triangulo(3, 3, 3);
-        Assert.assertEquals(3.897, t.areaDeTriangulo(), 0.1);
+        assertEquals(3.897, t.areaDeTriangulo(), 0.1);
     }
 
 }

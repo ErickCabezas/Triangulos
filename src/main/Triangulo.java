@@ -11,9 +11,13 @@ public class Triangulo {
         this.ladoC = ladoc;
     }
 
-    public static boolean esTriangulo(double ladoa, double ladob, double ladoc) {
+    public static boolean esTriangulo(double ladoa, double ladob, double ladoc) throws ExepcionNoEsTriangulo{
+        if(ladoa + ladob > ladoc && ladob + ladoc > ladoa && ladoc + ladoa > ladob){
+            return true;
+        }else{
+            throw new ExepcionNoEsTriangulo("Los lados proporcionados no forman un triangulo");
+        }
         //a+b>c,b+c>a,c+a>b
-        return ladoa + ladob > ladoc && ladob + ladoc > ladoa && ladoc + ladoa > ladob;
     }
 
     public String tipoDeTriangulo() {
