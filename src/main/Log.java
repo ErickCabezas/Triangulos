@@ -1,12 +1,11 @@
 package main;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Log {
 
-  public static void registrarResultado (String resultado) {
+  public static void registrarExcepciones(String resultado) {
     String archivo = "resultados_test.txt";
 
     try (BufferedWriter writer = new BufferedWriter(new BufferedWriter(new FileWriter(archivo, true)))) {
