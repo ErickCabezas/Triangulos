@@ -1,0 +1,7 @@
+Resultado testEquilatero: Equilatero
+Resultado testEscaleno: Escaleno
+Resultado testEsTriangulo: true
+Resultado testArea2: 3.897114317029974
+Resultado testArea: 6.0
+Resultado testIsosceles: Isósceles
+Resultado testNoEsTriangulo: Los lados proporcionados no forman un triangulo
