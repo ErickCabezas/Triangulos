@@ -1,3 +1,5 @@
+package main;
+
 public class Triangulo {
     private double ladoA;
     private double ladoB;

@@ -1,3 +1,6 @@
+package test;
+
+import main.Triangulo;
 import org.junit.Assert;
 import org.junit.Test;
 
